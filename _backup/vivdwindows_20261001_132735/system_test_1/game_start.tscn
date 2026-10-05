@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cju6gxyrkoc7v"]
+
+[ext_resource type="Script" uid="uid://cq2stasg416ij" path="res://system_test_1/test_bink_start.gd" id="1_nepm2"]
+
+[node name="GameStart" type="Node" unique_id=933690437]
+script = ExtResource("1_nepm2")

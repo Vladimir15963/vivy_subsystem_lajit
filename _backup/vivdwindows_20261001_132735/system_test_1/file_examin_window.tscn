@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dfqfkv45yivxi"]
+
+[ext_resource type="PackedScene" uid="uid://gtpkxrcuwm6i" path="res://system_test_1/defaultf_window.tscn" id="1_miq2n"]
+[ext_resource type="Script" uid="uid://c0joclunfy7pj" path="res://system_test_1/file_examin_window.gd" id="2_70jje"]
+
+[node name="file_examin_window" unique_id=2023629064 instance=ExtResource("1_miq2n")]
+script = ExtResource("2_70jje")
+
+[node name="Sprite2D" parent="." index="0" unique_id=2006503275]
+visible = false
+
+[node name="Label" type="Label" parent="." index="2" unique_id=1473340026]
+offset_left = 38.0
+offset_top = 90.0
+offset_right = 182.0
+offset_bottom = 113.0
+text = "请将文件拖入该窗口"

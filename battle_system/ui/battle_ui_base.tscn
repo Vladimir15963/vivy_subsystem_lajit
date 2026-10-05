@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://bce8xhaf754py"]
+
+[ext_resource type="Script" uid="uid://cldtlwrlhv0lm" path="res://battle_system/ui/battle_ui_base.gd" id="1_base"]
+
+[node name="BattleUIBase" type="Control" unique_id=1794608495]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_base")
+enemy_think_time = 1.25
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1872198376]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 12
+
+[node name="Root" type="VBoxContainer" parent="Margin" unique_id=1185518706]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HeaderBox" type="HBoxContainer" parent="Margin/Root" unique_id=1888540989]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="StatusLabel" type="Label" parent="Margin/Root/HeaderBox" unique_id=1695700350]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Progress Status: 探索"
+
+[node name="TurnLabel" type="Label" parent="Margin/Root/HeaderBox" unique_id=1663643842]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
+text = "当前回合：—"
+vertical_alignment = 1
+
+[node name="RosterBox" type="HBoxContainer" parent="Margin/Root" unique_id=1970915939]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="PartyPanel" type="VBoxContainer" parent="Margin/Root/RosterBox" unique_id=121662258]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="PartyTitle" type="Label" parent="Margin/Root/RosterBox/PartyPanel" unique_id=1649202143]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "我方（点击选择目标）"
+
+[node name="EnemyPanel" type="VBoxContainer" parent="Margin/Root/RosterBox" unique_id=1571988214]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="EnemyTitle" type="Label" parent="Margin/Root/RosterBox/EnemyPanel" unique_id=1783557514]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "敌方（点击选择目标）"
+
+[node name="SkillRow" type="HBoxContainer" parent="Margin/Root" unique_id=217209632]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SkillHint" type="Label" parent="Margin/Root/SkillRow" unique_id=1080586045]
+layout_mode = 2
+text = "技能："
+
+[node name="SkillBar" type="HBoxContainer" parent="Margin/Root/SkillRow" unique_id=529177514]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="ControlRow" type="HBoxContainer" parent="Margin/Root" unique_id=1161316926]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="EnterButton" type="Button" parent="Margin/Root/ControlRow" unique_id=1980643527]
+unique_name_in_owner = true
+layout_mode = 2
+text = "进入战斗"
+
+[node name="PauseButton" type="Button" parent="Margin/Root/ControlRow" unique_id=781831962]
+unique_name_in_owner = true
+layout_mode = 2
+text = "暂停战斗"
+
+[node name="ResumeButton" type="Button" parent="Margin/Root/ControlRow" unique_id=1287811073]
+unique_name_in_owner = true
+layout_mode = 2
+text = "继续战斗"
+
+[node name="EndButton" type="Button" parent="Margin/Root/ControlRow" unique_id=131502455]
+unique_name_in_owner = true
+layout_mode = 2
+text = "结束战斗"
+
+[node name="LeaveButton" type="Button" parent="Margin/Root/ControlRow" unique_id=649818073]
+unique_name_in_owner = true
+layout_mode = 2
+text = "返回探索"
+
+[node name="DataRow" type="HBoxContainer" parent="Margin/Root" unique_id=54388798]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="SaveButton" type="Button" parent="Margin/Root/DataRow" unique_id=829112112]
+unique_name_in_owner = true
+layout_mode = 2
+text = "保存到 txt"
+
+[node name="LoadSavedButton" type="Button" parent="Margin/Root/DataRow" unique_id=16316240]
+unique_name_in_owner = true
+layout_mode = 2
+text = "读取存档 txt"
+
+[node name="ReloadSourceButton" type="Button" parent="Margin/Root/DataRow" unique_id=598458494]
+unique_name_in_owner = true
+layout_mode = 2
+text = "重读原始 txt"
+
+[node name="LogView" type="RichTextLabel" parent="Margin/Root" unique_id=724670845]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+scroll_following = true
+
+[connection signal="pressed" from="Margin/Root/ControlRow/EnterButton" to="." method="_on_enter_pressed"]
+[connection signal="pressed" from="Margin/Root/ControlRow/PauseButton" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Margin/Root/ControlRow/ResumeButton" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Margin/Root/ControlRow/EndButton" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="Margin/Root/ControlRow/LeaveButton" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="Margin/Root/DataRow/SaveButton" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Margin/Root/DataRow/LoadSavedButton" to="." method="_on_load_saved_pressed"]
+[connection signal="pressed" from="Margin/Root/DataRow/ReloadSourceButton" to="." method="_on_reload_source_pressed"]

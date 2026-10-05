@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dho61s6dbss3e"]
+
+[ext_resource type="Script" uid="uid://bh0hqk6trhlog" path="res://scene_loader_test/tests/scene_loader_smoke_test.gd" id="1_smoke"]
+
+[node name="SceneLoaderSmokeTest" type="Node" unique_id=1305057469]
+script = ExtResource("1_smoke")

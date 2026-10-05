@@ -1,0 +1,20 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://vivd_windows/vivd_windows.gd" id="1_manager"]
+[ext_resource type="PackedScene" path="res://vivd_windows/types/default.tscn" id="2_default"]
+[ext_resource type="PackedScene" path="res://vivd_windows/types/image.tscn" id="3_image"]
+[ext_resource type="PackedScene" path="res://vivd_windows/types/file_examin.tscn" id="4_examin"]
+[ext_resource type="PackedScene" path="res://vivd_windows/types/video.tscn" id="5_video"]
+[ext_resource type="PackedScene" path="res://vivd_windows/types/text.tscn" id="6_text"]
+[ext_resource type="PackedScene" path="res://vivd_windows/types/terminal.tscn" id="7_terminal"]
+
+[node name="VivdWindows" type="Node"]
+script = ExtResource("1_manager")
+window_types = Dictionary[String, PackedScene]({
+"default": ExtResource("2_default"),
+"file_examin": ExtResource("4_examin"),
+"image": ExtResource("3_image"),
+"terminal": ExtResource("7_terminal"),
+"text": ExtResource("6_text"),
+"video": ExtResource("5_video")
+})

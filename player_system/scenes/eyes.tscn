@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dlayaf702o104"]
+
+[ext_resource type="Script" uid="uid://6gtuf2tfxv3l" path="res://player_system/scripts/eye.gd" id="1_0m31t"]
+[ext_resource type="Texture2D" uid="uid://b0oi5mhnq2ejy" path="res://player_system/assets/player/eyes2-1.png" id="2_50m0f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6fh2"]
+atlas = ExtResource("2_50m0f")
+region = Rect2(0, 2, 8, 3)
+
+[sub_resource type="Animation" id="Animation_rw6q1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_c6fh2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4qtv"]
+atlas = ExtResource("2_50m0f")
+region = Rect2(8, 2, 8, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sjra"]
+atlas = ExtResource("2_50m0f")
+region = Rect2(16, 12, 10, 3)
+
+[sub_resource type="Animation" id="Animation_aqb7g"]
+resource_name = "chiler"
+length = 0.158
+step = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.073, 0.099, 0.147),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_c6fh2"), SubResource("AtlasTexture_i4qtv"), SubResource("AtlasTexture_7sjra"), SubResource("AtlasTexture_c6fh2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.136),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1.26)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jb4ay"]
+_data = {
+&"RESET": SubResource("Animation_rw6q1"),
+&"chiler": SubResource("Animation_aqb7g")
+}
+
+[node name="eyes" type="Node2D" unique_id=1153828048]
+script = ExtResource("1_0m31t")
+margin = Vector2(10.7, 8.2)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=776282327]
+offset_right = 10.0
+offset_bottom = 3.0000002
+texture = SubResource("AtlasTexture_c6fh2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2061087231]
+libraries/ = SubResource("AnimationLibrary_jb4ay")
+
+[node name="Timer" type="Timer" parent="." unique_id=3551999]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

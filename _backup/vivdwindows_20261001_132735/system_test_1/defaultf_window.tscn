@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://gtpkxrcuwm6i"]
+
+[ext_resource type="Script" uid="uid://b10mvghsn6t7r" path="res://system_test_1/defaultf_window.gd" id="1_gkwaq"]
+
+[sub_resource type="Theme" id="Theme_wvhbo"]
+
+[node name="defaultf_window" type="Window" unique_id=2023629064]
+oversampling_override = 1.0
+title = "BtTl"
+position = Vector2i(0, 36)
+size = Vector2i(700, 200)
+wrap_controls = true
+always_on_top = true
+script = ExtResource("1_gkwaq")
+
+[node name="dev" type="Node" parent="." unique_id=329795144]
+
+[node name="Control" type="Control" parent="dev" unique_id=1150838383]
+modulate = Color(0, 1, 0, 1)
+z_index = 999
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_wvhbo")
+
+[node name="devinfo" type="VBoxContainer" parent="dev/Control" unique_id=177825275]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="position" type="Label" parent="dev/Control/devinfo" unique_id=1304243077]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="size" type="Label" parent="dev/Control/devinfo" unique_id=1636733558]
+unique_name_in_owner = true
+layout_mode = 2

@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://vivd_windows/types/default.tscn" id="1_base"]
+[ext_resource type="Script" path="res://vivd_windows/types/terminal_window.gd" id="2_term"]
+[ext_resource type="Script" path="res://fake_terminal/fake_terminal.gd" id="3_ft"]
+
+[node name="TerminalWindow" instance=ExtResource("1_base")]
+size = Vector2i(820, 460)
+script = ExtResource("2_term")
+prompt = "[color=green]player@game[/color]:[color=blue]~[/color]$ "
+font_size = 16
+bg_color = Color(0.0627451, 0.0784314, 0.109804, 1)
+fg_color = Color(0.843137, 0.862745, 0.898039, 1)
+
+[node name="Background" type="ColorRect" parent="." index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0627451, 0.0784314, 0.109804, 1)
+
+[node name="Margin" type="MarginContainer" parent="Background" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="FakeTerminal" type="Terminal" parent="Background/Margin" index="0"]
+layout_mode = 2
+script = ExtResource("3_ft")
+font_size = 16
+background_color = Color(0.0627451, 0.0784314, 0.109804, 1)
+foreground_color = Color(0.843137, 0.862745, 0.898039, 1)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://4rt778ueud57"]
+
+[ext_resource type="Script" uid="uid://byv7qwnjopo8b" path="res://system_test_1/vivd_windows.gd" id="1_b885d"]
+[ext_resource type="PackedScene" uid="uid://dfqfkv45yivxi" path="res://system_test_1/file_examin_window.tscn" id="2_d54t3"]
+[ext_resource type="PackedScene" uid="uid://gtpkxrcuwm6i" path="res://system_test_1/defaultf_window.tscn" id="3_evald"]
+[ext_resource type="PackedScene" uid="uid://bkkmbqk3soq7l" path="res://system_test_1/window_TYPE/image_window.tscn" id="4_3rykt"]
+
+[node name="VivdWindows" type="Node" unique_id=421474946]
+script = ExtResource("1_b885d")
+window_type = Dictionary[String, PackedScene]({
+"defaultf": ExtResource("3_evald"),
+"file_examin": ExtResource("2_d54t3"),
+"image": ExtResource("4_3rykt")
+})

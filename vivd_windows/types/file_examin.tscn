@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://vivd_windows/types/default.tscn" id="1_base"]
+[ext_resource type="Script" path="res://vivd_windows/types/file_examin_window.gd" id="2_examin"]
+
+[node name="FileExaminWindow" instance=ExtResource("1_base")]
+script = ExtResource("2_examin")
+
+[node name="Hint" type="Label" parent="." index="0"]
+offset_left = 38.0
+offset_top = 90.0
+offset_right = 460.0
+offset_bottom = 136.0
+text = "请将文件拖入该窗口"

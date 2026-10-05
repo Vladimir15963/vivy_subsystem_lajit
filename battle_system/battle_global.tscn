@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://battle_system/ui/battle_ui_base.tscn" id="1_base"]
+[ext_resource type="Script" path="res://battle_system/battle_global.gd" id="2_sub"]
+
+[node name="BattleGlobal" instance=ExtResource("1_base")]
+script = ExtResource("2_sub")
+use_global_game = true
+party_ids = PackedStringArray("priest")
+enemy_ids = PackedStringArray("goblin")

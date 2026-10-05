@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bkkmbqk3soq7l"]
+
+[ext_resource type="PackedScene" uid="uid://gtpkxrcuwm6i" path="res://system_test_1/defaultf_window.tscn" id="1_wm14m"]
+[ext_resource type="Script" uid="uid://d0p4dd5abjn21" path="res://system_test_1/window_TYPE/image_window.gd" id="2_wcccu"]
+[ext_resource type="Texture2D" uid="uid://disc0bs5n8ijy" path="res://icon.svg" id="3_vjoje"]
+
+[node name="Image_Window" unique_id=2023629064 instance=ExtResource("1_wm14m")]
+size = Vector2i(200, 200)
+unresizable = true
+script = ExtResource("2_wcccu")
+
+[node name="Control" type="Control" parent="." index="1" unique_id=1730322026]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control" index="0" unique_id=1050935644]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_vjoje")
+
+[node name="Label" type="Label" parent="." index="2" unique_id=992345483]
+offset_right = 199.0
+offset_bottom = 47.0

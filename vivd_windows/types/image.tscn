@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://vivd_windows/types/default.tscn" id="1_base"]
+[ext_resource type="Script" path="res://vivd_windows/types/image_window.gd" id="2_image"]
+[ext_resource type="Texture2D" path="res://icon.svg" id="3_icon"]
+
+[node name="ImageWindow" instance=ExtResource("1_base")]
+oversampling_override = 1.0
+size = Vector2i(200, 200)
+unresizable = true
+script = ExtResource("2_image")
+
+[node name="Texture" type="TextureRect" parent="." index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_icon")
+expand_mode = 1
+stretch_mode = 5

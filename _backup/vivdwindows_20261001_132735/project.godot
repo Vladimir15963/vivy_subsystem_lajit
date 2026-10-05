@@ -1,0 +1,47 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="测试"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+run/max_fps=60
+boot_splash/bg_color=Color(0, 0, 0, 1)
+config/icon="res://icon.svg"
+
+[autoload]
+
+KonadoStoryLocalization="*uid://c8y8inlr3ga6w"
+VivdWindowsNode="*uid://4rt778ueud57"
+
+[display]
+
+window/subwindows/embed_subwindows=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/per_pixel_transparency/allowed=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/konado/plugin.cfg")
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://addons/konado/localization/translations/konado.zh_Hans.po", "res://addons/konado/localization/translations/konado.zh_Hant.po", "res://addons/konado/localization/translations/konado.en.po", "res://addons/konado/localization/translations/konado.ja.po", "res://addons/konado/localization/translations/konado.ko.po")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

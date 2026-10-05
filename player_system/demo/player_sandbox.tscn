@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cpdituhuncex4"]
+
+[ext_resource type="Script" uid="uid://cmbxhgx3lgxne" path="res://player_system/demo/player_sandbox.gd" id="1_sandbox"]
+[ext_resource type="PackedScene" uid="uid://q6asbxlf23qt" path="res://player_system/scenes/player.tscn" id="2_player"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
+size = Vector2(4000, 60)
+
+[node name="player_sandbox" type="Node2D" unique_id=70016632]
+script = ExtResource("1_sandbox")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=587898798]
+position = Vector2(0, 260)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=539320025]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="player" parent="." unique_id=286361656 instance=ExtResource("2_player")]
+position = Vector2(0, -120)
+scale = Vector2(5, 5)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1443529]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=702727262]
+
+[node name="Info" type="Label" parent="CanvasLayer" unique_id=1134518564]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 760.0
+offset_bottom = 200.0
+
+[node name="Hint" type="Label" parent="CanvasLayer" unique_id=608878501]
+offset_left = 16.0
+offset_top = 600.0
+offset_right = 1140.0
+offset_bottom = 640.0
+text = "A/D 移动　空格 跳跃　Q 眼睛模式"

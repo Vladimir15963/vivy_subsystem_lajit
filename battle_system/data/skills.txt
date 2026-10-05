@@ -1,0 +1,43 @@
+# 技能表 —— 由 BattleData 通过 txt 加载 / 保存
+#
+# 语法：[技能ID] 开启一个技能段，段内为 key=value
+#   name        技能显示名
+#   type        attack(攻击) | heal(治疗)
+#   target      enemy | ally | all_allies | all_enemies
+#   power       基础威力
+#   mp_cost     魔力消耗
+#   description 说明文本
+#
+# 以 # 开头的行是注释，空行会被忽略。
+
+[slash]
+name=斩击
+type=attack
+target=enemy
+power=14
+mp_cost=0
+description=最基础的物理攻击，没有消耗。
+
+[heavy_slash]
+name=重斩
+type=attack
+target=enemy
+power=26
+mp_cost=6
+description=威力很高的一击。
+
+[heal]
+name=治疗术
+type=heal
+target=ally
+power=26
+mp_cost=5
+description=恢复单个我方角色的生命。
+
+[group_heal]
+name=群体治疗
+type=heal
+target=all_allies
+power=14
+mp_cost=12
+description=恢复我方全体角色的生命。

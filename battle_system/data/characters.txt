@@ -1,0 +1,48 @@
+# 角色数值表 —— 由 BattleData 通过 txt 加载 / 保存
+#
+# 语法：[角色ID] 开启一个角色段，段内为 key=value
+#   name     角色显示名
+#   max_hp   最大生命
+#   max_mp   最大魔力
+#   attack   攻击力
+#   defense  防御力
+#   speed    速度（决定行动顺序，越大越先动）
+#   skills   技能ID列表，用英文逗号分隔（ID 需存在于 skills.txt）
+#
+# 进入战斗时生命 / 魔力会重置为上限，因此这里只保存角色的基础数值。
+
+[hero]
+name=勇者
+max_hp=120
+max_mp=20
+attack=18
+defense=6
+speed=12
+skills=slash,heavy_slash,heal
+
+[priest]
+name=祭司
+max_hp=80
+max_mp=40
+attack=6
+defense=4
+speed=9
+skills=slash,heal,group_heal
+
+[slime]
+name=史莱姆
+max_hp=230
+max_mp=10
+attack=10
+defense=2
+speed=7
+skills=slash
+
+[goblin]
+name=哥布林
+max_hp=60
+max_mp=12
+attack=14
+defense=5
+speed=11
+skills=slash,heavy_slash

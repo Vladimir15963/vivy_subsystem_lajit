@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://vivd_windows/types/default.tscn" id="1_base"]
+[ext_resource type="Script" path="res://vivd_windows/types/text_window.gd" id="2_text"]
+
+[node name="TextWindow" instance=ExtResource("1_base")]
+size = Vector2i(640, 360)
+script = ExtResource("2_text")
+
+[node name="Background" type="ColorRect" parent="." index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07, 0.075, 0.1, 0.96)
+
+[node name="Margin" type="MarginContainer" parent="Background" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Body" type="RichTextLabel" parent="Background/Margin" index="0"]
+layout_mode = 2
+bbcode_enabled = true
+scroll_active = true
+theme_override_colors/default_color = Color(0.88, 0.9, 0.94, 1)
+theme_override_constants/line_separation = 6
+theme_override_font_sizes/normal_font_size = 18

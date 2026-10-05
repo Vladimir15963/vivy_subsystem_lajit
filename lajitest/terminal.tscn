@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bilqpdcvaif1m"]
+
+[ext_resource type="Script" uid="uid://1lf1wccaoand" path="res://lajitest/terminal.gd" id="1_dwkwm"]
+[ext_resource type="Script" uid="uid://uic6k7mbuxkq" path="res://lajitest/ssss.gd" id="2_gw3dj"]
+
+[node name="Control" type="Control" unique_id=671509823]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dwkwm")
+
+[node name="Terminal" type="Terminal" parent="." unique_id=2034763150]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_gw3dj")
+
+[node name="PTY" type="PTY" parent="." unique_id=1721861114]

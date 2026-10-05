@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://uthxlxxa2ycl"]
+
+[ext_resource type="Script" uid="uid://cgs8e6wdfxggo" path="res://system_test_1/test.gd" id="1_oqpd2"]
+
+[node name="test" type="Node" unique_id=451249844]
+script = ExtResource("1_oqpd2")
+
+[node name="Button" type="Button" parent="." unique_id=671020658]
+offset_left = 357.21063
+offset_top = 207.80621
+offset_right = 365.21063
+offset_bottom = 215.80621
+text = "fff"
+
+[node name="Button2" type="Button" parent="." unique_id=2123095172]
+offset_left = 769.8516
+offset_top = 134.70978
+offset_right = 809.8516
+offset_bottom = 165.70978
+text = "等等"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]
