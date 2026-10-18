@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d4idw1bjxrmbo"]
+
+[ext_resource type="Script" uid="uid://clkcf8x7ljoxy" path="res://subsystem/battle_system/tests/battle_logic_test.gd" id="1_logic_test"]
+
+[node name="BattleLogicTest" type="Node" unique_id=1338606373]
+script = ExtResource("1_logic_test")

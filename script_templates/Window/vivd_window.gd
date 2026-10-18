@@ -1,10 +1,10 @@
-extends "res://vivd_windows/vivd_window.gd"
+extends "res://subsystem/vivd_windows/vivd_window.gd"
 ## 新建 vivd 窗口类型的模板。
 ##
 ## 步骤：
 ##   1. 新建场景，根节点类型选 Window
 ##   2. 给根节点挂上这个脚本
-##   3. 在 res://vivd_windows/vivd_windows.tscn 的检查器里，
+##   3. 在 res://subsystem/vivd_windows/vivd_windows.tscn 的检查器里，
 ##      往 window_types 加一条「类型名 → 这个场景」；
 ##      或者把它放进 auto_scan_dirs 指向的目录里自动注册
 ##

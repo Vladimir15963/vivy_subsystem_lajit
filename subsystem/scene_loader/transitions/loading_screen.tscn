@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c5en03ktm7btn"]
+
+[ext_resource type="Script" uid="uid://cpvsojwqvp5b2" path="res://subsystem/scene_loader/transitions/loading_screen.gd" id="1_loading"]
+
+[node name="LoadingScreen" type="Control" unique_id=224510607]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_loading")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=1828741555]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.043, 0.051, 0.078, 1)
+
+[node name="Center" type="CenterContainer" parent="." unique_id=425101936]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center" unique_id=1272126687]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="Center/VBox" unique_id=826096112]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "载入中…"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Center/VBox" unique_id=968714312]
+custom_minimum_size = Vector2(460, 22)
+layout_mode = 2
+show_percentage = false
+
+[node name="PercentLabel" type="Label" parent="Center/VBox" unique_id=579097602]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "0%"
+horizontal_alignment = 1

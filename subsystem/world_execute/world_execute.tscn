@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://7735o7h10qi0"]
+
+[ext_resource type="Script" uid="uid://bicedu05y55cp" path="res://subsystem/world_execute/world_execute.gd" id="1_pv_main"]
+
+[node name="WorldExecute" type="Node2D" unique_id=1569530441]
+script = ExtResource("1_pv_main")
+input_enabled = false

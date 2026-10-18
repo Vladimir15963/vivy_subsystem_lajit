@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://djeigyvdfuh0s"
+path="res://.godot/imported/我的世界 经验球 升级.ogg-6df9d9c46a01bc3e4fdb86fa014b70ac.oggvorbisstr"
+
+[deps]
+
+source_file="res://subsystem/player_system/assets/audio/我的世界 经验球 升级.ogg"
+dest_files=["res://.godot/imported/我的世界 经验球 升级.ogg-6df9d9c46a01bc3e4fdb86fa014b70ac.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

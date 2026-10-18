@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cgsqbay7bc60e"]
+
+[ext_resource type="Script" uid="uid://kehxwaoot5sw" path="res://subsystem/vivd_windows/vivd_smoke_test.gd" id="1_smoke"]
+
+[node name="VivdSmokeTest" type="Node" unique_id=278446689]
+script = ExtResource("1_smoke")

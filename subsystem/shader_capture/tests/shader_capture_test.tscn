@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dt2a4dnw4la2r"]
+
+[ext_resource type="Script" uid="uid://bm6cgip84ri65" path="res://subsystem/shader_capture/tests/test_shader_capture.gd" id="1_test"]
+
+[node name="ShaderCaptureTest" type="Node" unique_id=1768223789]
+script = ExtResource("1_test")

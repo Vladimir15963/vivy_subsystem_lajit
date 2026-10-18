@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cbkeq5r0ly67v"]
+
+[ext_resource type="Script" uid="uid://btmj6ntv66q3b" path="res://subsystem/world_execute/tests/world_execute_smoke_test.gd" id="1_pv_smoke"]
+
+[node name="WorldExecuteSmokeTest" type="Node" unique_id=567666604]
+script = ExtResource("1_pv_smoke")

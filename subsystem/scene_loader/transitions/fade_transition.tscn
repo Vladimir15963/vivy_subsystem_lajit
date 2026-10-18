@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://t50uui15sbcq"]
+
+[ext_resource type="Script" uid="uid://jvsrj1flnqwx" path="res://subsystem/scene_loader/transitions/fade_transition.gd" id="1_fade"]
+
+[node name="FadeTransition" type="ColorRect" unique_id=290669811]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+script = ExtResource("1_fade")

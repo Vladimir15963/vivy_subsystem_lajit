@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://4hlrdkm85nc8"]
+
+[ext_resource type="Script" uid="uid://br3r45vv0h82f" path="res://subsystem/vivd_windows/types/default_window.gd" id="1_default"]
+
+[node name="DefaultWindow" type="Window" unique_id=366117040]
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+size = Vector2i(700, 200)
+always_on_top = true
+script = ExtResource("1_default")

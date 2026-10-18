@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://kr5cxhnuf263"]
+
+[ext_resource type="Script" uid="uid://cvf87eoajg174" path="res://subsystem/scene_loader/demo/demo_level.gd" id="1_level"]
+
+[node name="LevelA" type="Control" unique_id=322116209]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_level")
+level_title = "关卡 A"
+next_scene = "res://subsystem/scene_loader/demo/level_b.tscn"
+next_label = "关卡 B"
+accent = Color(0.145, 0.31, 0.55, 1)
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=334006280]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145, 0.31, 0.55, 1)
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1459183487]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 56
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 56
+theme_override_constants/margin_bottom = 44
+
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=1553601949]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="Margin/VBox" unique_id=518921477]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "关卡 A"
+
+[node name="InfoLabel" type="Label" parent="Margin/VBox" unique_id=637991707]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+
+[node name="PreloadBar" type="ProgressBar" parent="Margin/VBox" unique_id=1191452717]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+show_percentage = false
+
+[node name="HSeparator" type="HSeparator" parent="Margin/VBox" unique_id=519648907]
+layout_mode = 2
+
+[node name="NextButton" type="Button" parent="Margin/VBox" unique_id=62695986]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "① 读条加载"
+
+[node name="PreloadButton" type="Button" parent="Margin/VBox" unique_id=933369511]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "② 后台预加载"
+
+[node name="SeamlessButton" type="Button" parent="Margin/VBox" unique_id=279290687]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "③ 无缝切换"
+
+[node name="FadeNextButton" type="Button" parent="Margin/VBox" unique_id=436153110]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "④ 淡入淡出切换"
+
+[node name="BackButton" type="Button" parent="Margin/VBox" unique_id=56618784]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "返回主菜单（读条）"

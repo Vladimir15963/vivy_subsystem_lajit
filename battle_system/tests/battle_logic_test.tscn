@@ -1,6 +1,0 @@
-[gd_scene format=3]
-
-[ext_resource type="Script" path="res://battle_system/tests/battle_logic_test.gd" id="1_logic_test"]
-
-[node name="BattleLogicTest" type="Node"]
-script = ExtResource("1_logic_test")

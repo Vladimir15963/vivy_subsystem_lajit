@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dv3g1stsmk0sc"]
+
+[ext_resource type="Script" uid="uid://bv3g1stsmk001" path="res://subsystem/gist/tests/gist_smoke_test.gd" id="1_gist_smoke"]
+
+[node name="GistSmokeTest" type="Node" unique_id=2147000002]
+script = ExtResource("1_gist_smoke")

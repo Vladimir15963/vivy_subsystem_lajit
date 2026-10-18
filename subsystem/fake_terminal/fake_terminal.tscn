@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c35gje1qephjx"]
+
+[ext_resource type="Script" uid="uid://bujj7frfqsydd" path="res://subsystem/fake_terminal/fake_terminal.gd" id="1_ft"]
+
+[node name="FakeTerminal" type="Terminal" unique_id=415608575]
+script = ExtResource("1_ft")
+prompt = "[color=green]player@game[/color]:[color=blue]~[/color]$ "

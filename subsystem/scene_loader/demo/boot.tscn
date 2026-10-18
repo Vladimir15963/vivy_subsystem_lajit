@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dqx8m4fin0e3r"]
+
+[ext_resource type="Script" uid="uid://c6dsgc1isxg5g" path="res://subsystem/scene_loader/demo/boot.gd" id="1_boot"]
+
+[node name="Boot" type="Control" unique_id=2123242230]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_boot")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=598806937]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.031, 0.035, 0.051, 1)
+
+[node name="HintLabel" type="Label" parent="." unique_id=1778918918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "启动中…"
+horizontal_alignment = 1
+vertical_alignment = 1

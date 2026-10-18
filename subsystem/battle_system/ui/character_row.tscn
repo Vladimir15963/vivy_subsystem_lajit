@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://df1efd42x3u87"]
+
+[ext_resource type="Script" uid="uid://u20y157eheqh" path="res://subsystem/battle_system/ui/character_row.gd" id="1_row"]
+
+[node name="BattleCharacterRow" type="Button" unique_id=811150979]
+custom_minimum_size = Vector2(240, 54)
+offset_right = 240.0
+offset_bottom = 54.0
+script = ExtResource("1_row")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=2096533847]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = -8.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 1
+
+[node name="Header" type="HBoxContainer" parent="VBox" unique_id=1706092584]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="VBox/Header" unique_id=1631805139]
+layout_mode = 2
+text = "角色"
+
+[node name="StatLabel" type="Label" parent="VBox/Header" unique_id=2063141710]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "HP 0/0    MP 0/0"
+horizontal_alignment = 2
+
+[node name="HpBar" type="ProgressBar" parent="VBox" unique_id=1169508297]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+mouse_filter = 2
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="MpBar" type="ProgressBar" parent="VBox" unique_id=1835970779]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+mouse_filter = 2
+max_value = 1.0
+value = 1.0
+show_percentage = false

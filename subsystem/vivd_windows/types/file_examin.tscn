@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cufjrgr6rsocp"]
+
+[ext_resource type="PackedScene" uid="uid://4hlrdkm85nc8" path="res://subsystem/vivd_windows/types/default.tscn" id="1_base"]
+[ext_resource type="Script" uid="uid://ddwum0abmijvr" path="res://subsystem/vivd_windows/types/file_examin_window.gd" id="2_examin"]
+
+[node name="FileExaminWindow" unique_id=126651566 instance=ExtResource("1_base")]
+script = ExtResource("2_examin")
+
+[node name="Hint" type="Label" parent="." index="0" unique_id=44076457]
+offset_left = 38.0
+offset_top = 90.0
+offset_right = 460.0
+offset_bottom = 136.0
+text = "请将文件拖入该窗口"

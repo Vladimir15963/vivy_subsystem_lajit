@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="测试"
-run/main_scene="res://scene_loader_test/demo/boot.tscn"
+run/main_scene="res://subsystem/scene_loader/demo/boot.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -19,9 +19,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-VivdWindowsNode="*res://vivd_windows/vivd_windows.tscn"
+VivdWindowsNode="*res://subsystem/vivd_windows/vivd_windows.tscn"
 Game="*uid://beqi0010skth0"
-SceneLoader="*res://scene_loader_test/scene_loader.gd"
+SceneLoader="*res://subsystem/scene_loader/scene_loader.gd"
 Dialogic="*uid://ds2q0uclmolvu"
 McpInteractionServer="*res://autoload/mcp_interaction_server.gd"
 
@@ -35,9 +35,7 @@ directories/dch_directory={
 "邪恶vv": "res://dialogic/characters/邪恶vv.dch",
 "？？？": "res://dialogic/characters/？？？.dch"
 }
-directories/dtl_directory={
-"01第一幕": "res://dialogic/timelines/01第一幕.dtl"
-}
+directories/dtl_directory={}
 layout/style_directory={}
 
 [display]

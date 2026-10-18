@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cep3hsbta143s"]
+
+[ext_resource type="Script" uid="uid://dvfbllg1wdlic" path="res://subsystem/shader_preview/tests/test_shader_preview.gd" id="1_test"]
+
+[node name="ShaderPreviewTest" type="Node" unique_id=669133909]
+script = ExtResource("1_test")

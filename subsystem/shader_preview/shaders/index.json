@@ -1,0 +1,1272 @@
+{
+  "count": 58,
+  "generated_at": "2026-10-06T07:02:52",
+  "shaders": [
+    {
+      "author": "banwarfarms",
+      "author_url": "https://godotshaders.com/author/banwarfarms/",
+      "code_lines": 238,
+      "date": "2026-01-26",
+      "description": "crt + vhs (CanvasItem)\n\nFull-screen retro CRT/VHS post-process shader for Godot 4.5 / 4.6.\n\nI am still learning shaders, so feedback is welcome. This is free to use.\n\nThis shader adds:\n\n– CRT curvature\n\n– Vignette\n\n– Rounded screen corners\n\n– Scanlines\n\n– Optional RGB triad / shadow mask effect\n\n– VHS/VCR artifacts:\n\n– chroma shift\n\n– horizontal smear\n\n– per-line jitter\n\n– slow wobble\n\n– tracking lines\n\n– rolling bar\n\n– tape grain / specks\n\n– Cheap glow on bright pixels\n\n– Simple color grading:\n\n– brightness\n\n– contrast\n\n– saturation\n\n– gamma\n\n## How to use\n\n1. Create a `CanvasLayer`.\n\n2. Add a `ColorRect` as a child.\n\n3. Select the `ColorRect` and set:\n\n`Layout` &rarr; `Full Rect`\n\n4. On the `ColorRect`, create a new `ShaderMaterial`.\n\n5. In the `ShaderMaterial`, create a new `Shader`.\n\n6. Paste this shader code into the new shader.\n\n7. Optional but recommended:\n\nSet `ColorRect` &rarr; `Mouse` &rarr; `Filter` &rarr; `Ignore`\n\nThis prevents the full-screen ColorRect from blocking UI clicks.\n\n## Important: UI / HUD layering\n\nThis shader uses `hint_screen_texture` and `SCREEN_UV`, so it affects whatever has already been drawn behind the shader.\n\nThat means draw order matters.\n\nIf some UI elements get the CRT effect and other UI elements stay clean/flat, check your `CanvasLayer`, `Layer`, and `z_index` values.\n\n### Option A: Make the CRT/VHS effect apply to the game only\n\nUse this if you want your HUD, menus, health bars, subtitles, or progress bars to stay clean.\n\nRecommended setup:\n\n“`text\n\nGame world / 3D scene\n\nCanvasLayer 0\n\n└── CRT Shader ColorRect\n\nCanvasLayer 1 or higher\n\n└── UI / HUD / ProgressBars\n\n(050526_update_cleaned comments and added clearer notes about CanvasLayer / z_index setup. shader behavior is unchanged)",
+      "file": "test-crt-vcr.gdshader",
+      "godot_versions": [
+        "4.5",
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "CRT + VHS",
+      "shader_type": "canvas_item",
+      "slug": "test-crt-vcr",
+      "tags": [
+        "CRT",
+        "retro",
+        "tomatosalad",
+        "tv",
+        "VHS"
+      ],
+      "url": "https://godotshaders.com/shader/test-crt-vcr/"
+    },
+    {
+      "author": "tentabrobpy",
+      "author_url": "https://godotshaders.com/author/tentabrobpy/",
+      "code_lines": 38,
+      "date": "2025-10-16",
+      "description": "Per-object Squigglevision, also known as shimmer or boiling lines. Helps emulate a hand drawn, frame-by-frame look.\n\nNoise should be a seamless grayscale texture. The shader uses world space coordinates for consistency across objects.",
+      "file": "squigglevision.gdshader",
+      "godot_versions": [
+        "4.0",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Squigglevision",
+      "shader_type": "canvas_item",
+      "slug": "squigglevision",
+      "tags": [
+        "cartoon",
+        "distortion",
+        "doodle",
+        "drawing",
+        "hand drawn",
+        "shimmer",
+        "sketch",
+        "squiggle",
+        "toon",
+        "wiggle"
+      ],
+      "url": "https://godotshaders.com/shader/squigglevision/"
+    },
+    {
+      "author": "Gerardo LCDF",
+      "author_url": "https://godotshaders.com/author/gerardo-lcdf/",
+      "code_lines": 122,
+      "date": "2025-10-10",
+      "description": "This is an advanced Screen-Space Shader adapted for Godot 4’s CanvasItem that simulates dynamic rain running down a glass surface (like a window or camera lens). The effect blends complex procedural logic with visual post-processing.\n\nThe shader works by:\n\nSDF Drop Generation: Using a custom Signed Distance Field (sdEgg) to define the precise, rounded shape of individual raindrops, including the tear-like tail for movement.\n\nLayered Movement: Generating multiple layers of rain (static drops, slow-moving trails, and faster drops) whose visibility is controlled by the rain_amount uniform.\n\nRefraction and Distortion: Calculating the normal vector (n) of the accumulated drop map and using it to displace the SCREEN_TEXTURE coordinates, creating a realistic refraction effect.\n\nDynamic Blur: Applying a variable blur (focus) using textureLod, which blurs the background more heavily when dense water trails (c.y) are present.",
+      "file": "rain-on-glass.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "mit",
+      "name": "Rain on Glass",
+      "shader_type": "canvas_item",
+      "slug": "rain-on-glass",
+      "tags": [
+        "animated",
+        "blur",
+        "godotshader",
+        "postprocess",
+        "rain",
+        "realistic",
+        "refraction",
+        "ScreenSpace",
+        "SDF",
+        "weather"
+      ],
+      "url": "https://godotshaders.com/shader/rain-on-glass/"
+    },
+    {
+      "author": "Gencreezo",
+      "author_url": "https://godotshaders.com/author/gencreezo/",
+      "code_lines": 110,
+      "date": "2025-10-06",
+      "description": "This shader is AI generated.\n\nIt’s purpose is to give drop and inner shadow functionality that can be added to canvas elements in a similar way as design tool such as Figma.\n\nI use it mostly for UI Icons, so it works best with TextureRects, i have not tested it with other elements.\n\nHow to use:",
+      "file": "canvas-drop-shadow-and-inner-shadow-shader.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "Canvas drop shadow and inner shadow shader",
+      "shader_type": "canvas_item",
+      "slug": "canvas-drop-shadow-and-inner-shadow-shader",
+      "tags": [
+        "2d shadow",
+        "canvas shadow",
+        "drop shadow",
+        "inner shadow",
+        "shadow"
+      ],
+      "url": "https://godotshaders.com/shader/canvas-drop-shadow-and-inner-shadow-shader/"
+    },
+    {
+      "author": "klaktus1901",
+      "author_url": "https://godotshaders.com/author/klaktus1901/",
+      "code_lines": 108,
+      "date": "2025-09-30",
+      "description": "Smilar to buckshoot roulette style shader, but more pixelated and only blue – red color pallet.\n\nUse to color rect who is camera3d child",
+      "file": "cctv-old-security-camera-style-shader.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "CCTV old security camera style shader",
+      "shader_type": "canvas_item",
+      "slug": "cctv-old-security-camera-style-shader",
+      "tags": [
+        "camera",
+        "computer",
+        "horror",
+        "monitor"
+      ],
+      "url": "https://godotshaders.com/shader/cctv-old-security-camera-style-shader/"
+    },
+    {
+      "author": "dairycultist",
+      "author_url": "https://godotshaders.com/author/dairycultist/",
+      "code_lines": 43,
+      "date": "2025-08-10",
+      "description": "A glitch shader I used as a world border. I removed the logic for making it fade in when you got nearer because it was poorly implemented :3\n\nIt has a bunch of parameters to control the different glitch effects (which are animated!).",
+      "file": "glitch.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "Glitch",
+      "shader_type": "spatial",
+      "slug": "glitch",
+      "tags": [
+        "glitch"
+      ],
+      "url": "https://godotshaders.com/shader/glitch/"
+    },
+    {
+      "author": "binbun",
+      "author_url": "https://godotshaders.com/author/binbun/",
+      "code_lines": 57,
+      "date": "2026-02-09",
+      "description": "This gradient texture based transition effect for Godot 4.x gives you infinite possibilities for transitions.\n\nIf you want some presets you can find them here.",
+      "file": "transition-shader-with-patterns.gdshader",
+      "godot_versions": [
+        "4.4",
+        "4.5",
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Transition Shader With Patterns",
+      "shader_type": "canvas_item",
+      "slug": "transition-shader-with-patterns",
+      "tags": [
+        "canvas",
+        "pattern",
+        "transition"
+      ],
+      "url": "https://godotshaders.com/shader/transition-shader-with-patterns/"
+    },
+    {
+      "author": "muzi1983",
+      "author_url": "https://godotshaders.com/author/muzi1983/",
+      "code_lines": 60,
+      "date": "2025-08-05",
+      "description": "This shader creates a dot matrix-style screen transition that reveals content progressively along the diagonal, from top-left to bottom-right. It’s ideal for cinematic transitions, UI masking, or stylized loading effects.\n\n### Parameters:\n\n– `spacing`: Distance between grid points\n\n– `dot_size`: Relative size of each dot\n\n– `dot_color`: Tint color of the dots\n\n– `animation_progress`: Controls reveal progress from 0.0 (hidden) to 1.0 (fully shown)",
+      "file": "dot-matrix-diagonal-reveal-shader.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "Dot Matrix Diagonal Reveal Shader",
+      "shader_type": "canvas_item",
+      "slug": "dot-matrix-diagonal-reveal-shader",
+      "tags": [
+        "2d shader",
+        "canvas_item",
+        "diagonal reveal",
+        "dot matrix",
+        "godot 4",
+        "grid",
+        "masking",
+        "screen effect",
+        "transition"
+      ],
+      "url": "https://godotshaders.com/shader/dot-matrix-diagonal-reveal-shader/"
+    },
+    {
+      "author": "TTien63",
+      "author_url": "https://godotshaders.com/author/ttien63/",
+      "code_lines": 60,
+      "date": "2026-03-30",
+      "description": "Made with Godot 4.6.1\n\nDo u like POOTIS ENGAGE? I do, it’s why I made this shader for you. But I stylized it even more to fit my artstyle of my game project.\n\nHow to use it:\n– Use ColorRect\n\n– Create a shader code and paste the nuke code\n\n– Offset at 1.0 is the best spot for simple black bar\n\n– Don’t want black bar? Just swap it with other color at Fill Color uniform\n\n– Enable Invert to turn on Invert effect\n\nAnother guidance on how to make it visible on all layer no matter if you put it at the lowest point of your life:\n\n– Add CanvaLayer node\n\n– Attach the ColorRect with the nuke code as child node\n\n– Set CanvaLayer to layer 69 (not necessary but we need it to be at the highest layer :3)\n\nCheck Demo video of how I use it",
+      "file": "stylized-screen-edge-with-threshold-fx.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Stylized Screen Edge with Threshold FX",
+      "shader_type": "canvas_item",
+      "slug": "stylized-screen-edge-with-threshold-fx",
+      "tags": [
+        "CanvaItem",
+        "cinema frame",
+        "invert",
+        "POOTIS ENGAGE"
+      ],
+      "url": "https://godotshaders.com/shader/stylized-screen-edge-with-threshold-fx/"
+    },
+    {
+      "author": "halcyonxero",
+      "author_url": "https://godotshaders.com/author/halcyonxero/",
+      "code_lines": 33,
+      "date": "2022-02-17",
+      "description": "Add it to a color rect\n\nMy attempt at converting https://www.shadertoy.com/view/XsBfRW\n\nPlease enjoy",
+      "file": "pretty-hip.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "Pretty Hip",
+      "shader_type": "canvas_item",
+      "slug": "pretty-hip",
+      "tags": [],
+      "url": "https://godotshaders.com/shader/pretty-hip/"
+    },
+    {
+      "author": "nswagg",
+      "author_url": "https://godotshaders.com/author/nswagg/",
+      "code_lines": 79,
+      "date": "2025-09-05",
+      "description": "Derivative of Hei’s 2D-perspective shader to work when Sprite2D is a sprite sheet (instead of using animated sprite2D). Check out their work and forum: https://godotshaders.com/shader/2d-perspective/ (MIT License)\n\nThe UVs are calculated by the whole texture on the original shader (as designed), which can make the perspective look incorrect when only viewing part of the whole sprite.\n\nIt’s important that the Sprite2D does not use the “Region” option, or the effect will not work as expected.\n\nTested with “horizontal” sprite sheet, sprites on same Y layer for simplicity. Define number of sprites in sheet with num_col and active sprite frame to view with active_frame\n\nEDIT: Corrected projection; frames were calculating differently when re-projecting after translation. Offset was missed. Added back for pivots around origin instead of translating unnecessarily.",
+      "file": "modified-2d-perspective-sprite-sheet.gdshader",
+      "godot_versions": [],
+      "license": "mit",
+      "name": "Modified 2D-perspective (sprite-sheet)",
+      "shader_type": "canvas_item",
+      "slug": "modified-2d-perspective-sprite-sheet",
+      "tags": [],
+      "url": "https://godotshaders.com/shader/modified-2d-perspective-sprite-sheet/"
+    },
+    {
+      "author": "xcv145336",
+      "author_url": "https://godotshaders.com/author/xcv145336/",
+      "code_lines": 202,
+      "date": "2025-09-05",
+      "description": "。Opening\n\nA Starfield in the sky, and you can also choose the speed of scrolling direction.\n\n。Detail\n\nClaude AI 生成 >\n\n1.多網格系統，加速星群渲染\n\n2.噪聲系統(FBM)，並且由3相FBM疊加模擬天空雲霧特效。\n\n自行生成 >\n\n星星繪製方程 https://godotshaders.com/shader/2d-sparkling-star-effect-ver-2-0/\n\nClaude AI-generated>\n\n1. A multi-layer grid system helps speed up the rendering of stars.\n\n2. A noise system (FBM) is used, wrapping three layers of FBM to create realistic sky clouds and fog effects.\n\nSelf-generated >\n\nStar drawing formula: https://godotshaders.com/shader/2d-sparkling-star-effect-ver-2-0/",
+      "file": "2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "[2D] Starfield in the sky with scrolling effect ver 1.0",
+      "shader_type": "canvas_item",
+      "slug": "2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0",
+      "tags": [
+        "Starfield"
+      ],
+      "url": "https://godotshaders.com/shader/2d-starfield-in-the-sky-with-scrolling-effect-ver-1-0/"
+    },
+    {
+      "author": "Elid Elid",
+      "author_url": "https://godotshaders.com/author/elid-elid/",
+      "code_lines": 13,
+      "date": "2021-03-29",
+      "description": "Simple LED/dot matrix shader",
+      "file": "led-dot-matrix-shader.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "LED/Dot Matrix",
+      "shader_type": "canvas_item",
+      "slug": "led-dot-matrix-shader",
+      "tags": [],
+      "url": "https://godotshaders.com/shader/led-dot-matrix-shader/"
+    },
+    {
+      "author": "QbieShay",
+      "author_url": "https://godotshaders.com/author/qbieshay/",
+      "code_lines": 30,
+      "date": "2021-03-19",
+      "description": "A sketchy outline material for Godot Engine.\n\nThis is a multipass shader that works best with 2 passes: the one provided, and an additional one with cull_back and slightly different parameters. Please see the material configuration on itch.io\n\nWarning: does not work well on hard surfaces and meshes with large flat areas.",
+      "file": "animated-sketchy-line.gdshader",
+      "godot_versions": [],
+      "license": "mit",
+      "name": "Animated sketchy line",
+      "shader_type": "spatial",
+      "slug": "animated-sketchy-line",
+      "tags": [
+        "multipass",
+        "outline"
+      ],
+      "url": "https://godotshaders.com/shader/animated-sketchy-line/"
+    },
+    {
+      "author": "CamiXes",
+      "author_url": "https://godotshaders.com/author/camixes/",
+      "code_lines": 18,
+      "date": "2021-07-31",
+      "description": "this is my first shader!\n\nI was messing around with some trigonometry functions and some other functions and accidentally made this effect.",
+      "file": "simple-transition-effect.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "Simple Transition Effect",
+      "shader_type": "canvas_item",
+      "slug": "simple-transition-effect",
+      "tags": [],
+      "url": "https://godotshaders.com/shader/simple-transition-effect/"
+    },
+    {
+      "author": "Hayden",
+      "author_url": "https://godotshaders.com/author/hayden/",
+      "code_lines": 35,
+      "date": "2021-08-03",
+      "description": "Adds directional motion blur to canvas items like Sprite. Direction, size, and quality of blur can be configured.",
+      "file": "2d-motion-blur.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "2D Motion Blur",
+      "shader_type": "canvas_item",
+      "slug": "2d-motion-blur",
+      "tags": [
+        "2d",
+        "blur",
+        "canvas"
+      ],
+      "url": "https://godotshaders.com/shader/2d-motion-blur/"
+    },
+    {
+      "author": "RedKnack Interactive",
+      "author_url": "https://godotshaders.com/author/redknack-interactive/",
+      "code_lines": 91,
+      "date": "2026-02-17",
+      "description": "A canvas_item shader that rains colorful confetti pieces from the top of the screen. All 120 particles are simulated entirely on the GPU, so no nodes, no particles system, no GDScript needed at runtime.\n\nEach piece has its own randomized fall speed, sway frequency, sway amplitude, spin direction, size, and aspect ratio, giving the effect a natural and lively feel. A subtle shimmer simulates the pieces flipping as they rotate. The 8-color palette is fully customizable directly in the Inspector.\n\nSimply apply the shader to a full-screen ColorRect and set the resolution uniform to your viewport size via script",
+      "file": "confetti-colorrect-godot-4-5.gdshader",
+      "godot_versions": [
+        "4.5",
+        "4.6"
+      ],
+      "license": "mit",
+      "name": "Confetti (ColorRect) [Godot 4.5+]",
+      "shader_type": "canvas_item",
+      "slug": "confetti-colorrect-godot-4-5",
+      "tags": [
+        "2d",
+        "ColorRect",
+        "Confetti"
+      ],
+      "url": "https://godotshaders.com/shader/confetti-colorrect-godot-4-5/"
+    },
+    {
+      "author": "nojoule",
+      "author_url": "https://godotshaders.com/author/nojoule/",
+      "code_lines": 116,
+      "date": "2026-02-10",
+      "description": "Double Dither is a lightweight Godot shader that combines dithering in a way, that combines two dithering passes resulting in circles with rough and somewhat randomized edges. Using optional blending, results in 5 stepped transparency values for smoother blending, while still maintaining the rough dithered edges. \nThis shader looks great for transition screens, backgrounds or shadows.\n\nIf you like shaders for pixel art, check out my asset for UI shader effects for Godot:\nhttps://nojoule.itch.io/pixel-ui-vfx\n\nOr follow me for more stuff: https://nojoule.itch.io",
+      "file": "double-dither-stylized-transparency-shadows-retro-masks.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Double Dither – Stylized Transparency, Shadows & Retro Masks",
+      "shader_type": "canvas_item",
+      "slug": "double-dither-stylized-transparency-shadows-retro-masks",
+      "tags": [
+        "background",
+        "pixel-art",
+        "pixelart",
+        "retro",
+        "shadow",
+        "stylized",
+        "transition"
+      ],
+      "url": "https://godotshaders.com/shader/double-dither-stylized-transparency-shadows-retro-masks/"
+    },
+    {
+      "author": "Miaurin",
+      "author_url": "https://godotshaders.com/author/miaurin/",
+      "code_lines": 33,
+      "date": "2026-02-11",
+      "description": "This shader generates animated, stylized Pixel-clouds, that bend around a given point.\n\nHow to use:",
+      "file": "pixelated-radial-2d-clouds.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Pixelated, radial 2D-Clouds",
+      "shader_type": "canvas_item",
+      "slug": "pixelated-radial-2d-clouds",
+      "tags": [
+        "2d",
+        "clouds",
+        "Pixelated",
+        "stylized"
+      ],
+      "url": "https://godotshaders.com/shader/pixelated-radial-2d-clouds/"
+    },
+    {
+      "author": "Dezimos",
+      "author_url": "https://godotshaders.com/author/dezimos/",
+      "code_lines": 438,
+      "date": "2026-06-09",
+      "description": "Displays customizable telegraph decals on certain surfaces (also known in some games as AoE indicators, area of effect markers, or combat cues). Each indicator is constructed from one or more primitive shapes (box, cylinder, sphere) in a similar way to constructive solid geometry (union, intersection, subtraction).\n\nTelegraphs are rendered as signed-distance fields evaluated in the fragment shader of the overlay mesh. Per-frame, telegraph data is serialized into a tiny texture (using RGB32F format so that floats can be stored with no color space conversion). The texture acts as a data transfer bus, passed as a single uniform to the shader. The shader reads this texture to reconstruct the SDF scene at each fragment.\n\nThis approach avoids uniform buffer size limits (see godot#55674, godot#85374) and works across all renderers (Forward+, Mobile, Compatibility) without compute shaders, storage buffers, or multi-pass rendering.\n\nThe single-pixel outline works by evaluating the signed-distance field at the four adjacent pixel positions (obtained via dFdx/dFdy in world space). If the signs differ among neighbors, the fragment is on a shape boundary and receives the outline color, all without a screen-space pass.",
+      "file": "constructive-telegraph-decals.gdshader",
+      "godot_versions": [
+        "4.2",
+        "4.6"
+      ],
+      "license": "mit",
+      "name": "Constructive telegraph decals",
+      "shader_type": "spatial",
+      "slug": "constructive-telegraph-decals",
+      "tags": [
+        "aoe",
+        "damage",
+        "indicator",
+        "Telegraph"
+      ],
+      "url": "https://godotshaders.com/shader/constructive-telegraph-decals/"
+    },
+    {
+      "author": "ekkochambers",
+      "author_url": "https://godotshaders.com/author/ekkochambers/",
+      "code_lines": 61,
+      "date": "2026-07-14",
+      "description": "A fork of my own CRT/VHS shader I did a while back, this time it’s more focused on being a practical CRT shader. Includes blur, “diffusion” (actually seperate from blur, overblows gamma), a more realistic vinnette and ofc the scanlines and stuff. This version doesn’t have noise, I would reccomend adding that on a seperate ColorRect\n\nThis is good if your going for the look of old PC games like Deus Ex that are too dark on modern monitors but were made on/for CRTs",
+      "file": "semi-realistic-crt-emulation.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Semi-Realistic CRT Emulation",
+      "shader_type": "canvas_item",
+      "slug": "semi-realistic-crt-emulation",
+      "tags": [
+        "CRT",
+        "glow",
+        "monitor",
+        "old",
+        "pc",
+        "retro",
+        "scanlines",
+        "screen",
+        "tv"
+      ],
+      "url": "https://godotshaders.com/shader/semi-realistic-crt-emulation/"
+    },
+    {
+      "author": "miwls",
+      "author_url": "https://godotshaders.com/author/miwls/",
+      "code_lines": 191,
+      "date": "2026-07-04",
+      "description": "Hey! I imagine most of you have already seen this shader. A few days ago I came across a similar version of it and thought, “why not?”\n\nSo here it is: Falling Glass Shader V2.\n\nThis version also fixes my past shader stupidity XDDD\n\nThis shader works by splitting the screen into Voronoi pieces. Each fragment is assigned to its closest Voronoi cell, which becomes an individual glass shard.\n\nEvery shard receives its own random delay, horizontal drift, rotation, and falling speed, making the animation feel much more natural. Instead of simply moving the pixels downward, the shader reconstructs where each shard originally came from and samples the screen texture from that position. This keeps every piece intact while it falls.\n\nTo make sure no shard gets stuck on screen, each one calculates exactly how far it needs to travel before it is completely outside the viewport. A small glow is also added along the Voronoi edges to help separate the shards visually, and an optional alpha fade can make them disappear smoothly near the end of the animation.\n\nThe result is a lightweight fake glass-shattering effect that runs entirely inside a CanvasItem shader, with no particles, meshes, or physics required.\n\nThanks to Ttiene63 for reminding me that this shader existed. :3\nhttps://godotshaders.com/shader/frostbite/",
+      "file": "glass-broken-falling-v2.gdshader",
+      "godot_versions": [
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Glass broken falling V2",
+      "shader_type": "canvas_item",
+      "slug": "glass-broken-falling-v2",
+      "tags": [
+        "glass"
+      ],
+      "url": "https://godotshaders.com/shader/glass-broken-falling-v2/"
+    },
+    {
+      "author": "Star",
+      "author_url": "https://godotshaders.com/author/star/",
+      "code_lines": 29,
+      "date": "2026-06-20",
+      "description": "A foggy glass shader for the settings background of a VN im working on.\n\nTo use it apply it to a color rect, or whatever you want to have the affect, then add the noise image(or really any image you want) and tick seamless.\n\nif you’re wanting a more pixelated “fogginess” effect change “filter_linear_mipmap” in ScreenTexture to “filter_nearest_mipmap”\n\nGlassColor: modulation color aplied to the shader\n\nFogginess: how blurred the texture is\n\nNoiseTexture: the texture overlayed to give variation\n\nNoiseMoveSpeed: how fast the texture overlay moves, its sin(TIME / NoiseMoveSpeed) so lower = faster\n\nTextureModulationStregnth: how strong the texture overlay is\n\nCelShading: toggles the celshading effect, it doesnt work well if using \"filter_nearest_mipmap\" and NoiseTexture overlay\n\nCelShadingStregnth: uses COLOR.rgb = round(COLOR.rgb * CelShadingStregnth) / CelShadingStregnth so the lower the CelShadingStregnth the more intense the color limiting, round numbers work best\n\nmess around with the variables to get what you want, the default settings are what i am useing",
+      "file": "foggy-glass-shader.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Foggy Glass Shader",
+      "shader_type": "canvas_item",
+      "slug": "foggy-glass-shader",
+      "tags": [
+        "blur",
+        "foggy",
+        "foggy blur",
+        "glass",
+        "steam",
+        "steamy",
+        "ui",
+        "ux"
+      ],
+      "url": "https://godotshaders.com/shader/foggy-glass-shader/"
+    },
+    {
+      "author": "latchina36@stirlingschools.net",
+      "author_url": "https://godotshaders.com/author/latchina36stirlingschools-net/",
+      "code_lines": 67,
+      "date": "2026-06-17",
+      "description": "",
+      "file": "starry-night.gdshader",
+      "godot_versions": [
+        "4.3"
+      ],
+      "license": "cc0",
+      "name": "Starry night",
+      "shader_type": "canvas_item",
+      "slug": "starry-night",
+      "tags": [],
+      "url": "https://godotshaders.com/shader/starry-night/"
+    },
+    {
+      "author": "ProfesorShader",
+      "author_url": "https://godotshaders.com/author/profesorshader/",
+      "code_lines": 61,
+      "date": "2026-06-14",
+      "description": "These are two very simple Persona 5 inspired transition shaders. I’ve created this for my “scene change with transtions” tutorial. I’m also using the new Godot 4.7 control nodes transform offset, so if you try the github demo, be sure to use Godot 4.7 Dev 3 or above.\n\nFor more details, please take a look to the sample/demo project on my github and/or watch my youtube video for a detailed explanation of this shader (its in spanish).\n\nEnjoy! 😘​",
+      "file": "scene-change-transition-effects-persona-5-inspired.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Scene Change Transition Effects (persona 5 inspired)",
+      "shader_type": "canvas_item",
+      "slug": "scene-change-transition-effects-persona-5-inspired",
+      "tags": [
+        "change",
+        "scene",
+        "transition"
+      ],
+      "url": "https://godotshaders.com/shader/scene-change-transition-effects-persona-5-inspired/"
+    },
+    {
+      "author": "pend00",
+      "author_url": "https://godotshaders.com/author/pend00/",
+      "code_lines": 107,
+      "date": "2021-01-27",
+      "description": "An animated god ray effect that can be used in many ways. See animation below.\n\nUniforms\n\nThe rays blend with the background with a ‘Screen’ blending mode but you can change this for a different result. See godotshaders.com/snippet/blending-modes/ to get code to other blending modes.\n\nInstructions \nThis shader is all code, no noise textures. So just paste the code into a new shader for a Sprite node or a ColorRect. Sprite nodes need a base texture.",
+      "file": "god-rays.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "God rays",
+      "shader_type": "canvas_item",
+      "slug": "god-rays",
+      "tags": [
+        "effect",
+        "environment",
+        "light",
+        "shine"
+      ],
+      "url": "https://godotshaders.com/shader/god-rays/"
+    },
+    {
+      "author": "godotshaders",
+      "author_url": "https://godotshaders.com/author/godotshaders/",
+      "code_lines": 43,
+      "date": "2021-01-20",
+      "description": "Make a sprite sway, like it is affected by the wind. See the animation below for example. There are several parameters to control:",
+      "file": "2d-wind-sway.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "2D wind sway",
+      "shader_type": "canvas_item",
+      "slug": "2d-wind-sway",
+      "tags": [
+        "2d",
+        "tree",
+        "vertex",
+        "wind"
+      ],
+      "url": "https://godotshaders.com/shader/2d-wind-sway/"
+    },
+    {
+      "author": "jess.codes",
+      "author_url": "https://godotshaders.com/author/jess-codes/",
+      "code_lines": 53,
+      "date": "2025-06-10",
+      "description": "A fragment shader made in Godot 4.4 that creates a windy effect. It works by rotating UVs around a specified pivot point, and fluctuates the strength based on a noise texture. By rotating around a fixed point at the bottom of the trunk, the tree trunk can remain still while the top of the leaves can move freely.\n\nApply the shader to a Sprite2D node, and add a noise texture, then set the parameters however you want.\n\nOther notes:",
+      "file": "2d-foliage-wind-effect.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "2D Foliage Wind Effect",
+      "shader_type": "canvas_item",
+      "slug": "2d-foliage-wind-effect",
+      "tags": [],
+      "url": "https://godotshaders.com/shader/2d-foliage-wind-effect/"
+    },
+    {
+      "author": "mrsir8433",
+      "author_url": "https://godotshaders.com/author/mrsir8433/",
+      "code_lines": 31,
+      "date": "2022-04-16",
+      "description": "A basic distortion shader with chromatic abberation, with modular parameters.\n\n# Edit – 4.1.1\n\n0. Godot 4.1.1 update\n\n1. Ok. First of all, it is a screen-space shader. If one wants to add this to specific node with texture, it has to be modified a bit. Like the screen-texture has to be changed to node-specific texture with sampler2d.\n\n2. You can download the demo-project here. godot_shaders_distortion\n\n3. You have to animate the radius and center parameters from outside. Add this shader to a color-rect above all nodes as a canvas layer. The center property is in range 0 to 1. So you have to normalise the position u want the distortion to originate from.\n\n4. If any problem happens, comment here; I will try to response accordingly.\n\nPeace!!!",
+      "file": "distortion.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "Distortion/Shockwave Shader",
+      "shader_type": "canvas_item",
+      "slug": "distortion",
+      "tags": [
+        "aberration",
+        "distortion",
+        "godot_4_1_1",
+        "lens",
+        "screen-space",
+        "shockwave"
+      ],
+      "url": "https://godotshaders.com/shader/distortion/"
+    },
+    {
+      "author": "mreliptik",
+      "author_url": "https://godotshaders.com/author/mreliptik/",
+      "code_lines": 20,
+      "date": "2024-03-12",
+      "description": "It’s a modification of the 2D Simple dissolve shader to add a burn edge.\n\nHow to setup\n\nHow to use",
+      "file": "2d-dissolve-with-burn-edge.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "2D dissolve with burn edge",
+      "shader_type": "canvas_item",
+      "slug": "2d-dissolve-with-burn-edge",
+      "tags": [
+        "2d",
+        "burn",
+        "dissolve"
+      ],
+      "url": "https://godotshaders.com/shader/2d-dissolve-with-burn-edge/"
+    },
+    {
+      "author": "null_builds",
+      "author_url": "https://godotshaders.com/author/null_builds/",
+      "code_lines": 21,
+      "date": "2026-04-10",
+      "description": "A general purpose transition shader which uses greyscale masks to obscure/reveal the canvas behind a color rect over a scene.\n\nParameters:",
+      "file": "luminance-mask-transition.gdshader",
+      "godot_versions": [
+        "4.4",
+        "4.5",
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Luminance Mask Transition",
+      "shader_type": "canvas_item",
+      "slug": "luminance-mask-transition",
+      "tags": [
+        "animated",
+        "luminance",
+        "mask",
+        "transition"
+      ],
+      "url": "https://godotshaders.com/shader/luminance-mask-transition/"
+    },
+    {
+      "author": "Juulpower",
+      "author_url": "https://godotshaders.com/author/juulpower/",
+      "code_lines": 62,
+      "date": "2021-01-19",
+      "description": "Adds an outer or inner stroke to a texture. Just attach the shader to a material and the material to a canvas item like a sprite. This shader is robust and configurable (color, width, pattern, placement, and the ability to add margins to the texture to make room for an outline). However, for textures with anti-aliased edges this shader might provide a better result.\n\nFor Godot 3, replace source_color at line 3 by hint_color.\n\nFor Godot 4, if you also want to use the modulate property, you can incorporate this solution for now and then replace texture(TEXTURE, uv) by texture(TEXTURE, uv) * modulate twice, color.rgb (case-sensitive) by color.rgb * modulate.rgb twice, and color.a (case-sensitive) by color.a * modulate.a twice.",
+      "file": "2d-outline-inline.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "2D outline/inline",
+      "shader_type": "canvas_item",
+      "slug": "2d-outline-inline",
+      "tags": [
+        "2d",
+        "border",
+        "configurable",
+        "inline",
+        "outline",
+        "stroke"
+      ],
+      "url": "https://godotshaders.com/shader/2d-outline-inline/"
+    },
+    {
+      "author": "enekoassets",
+      "author_url": "https://godotshaders.com/author/enekoassets/",
+      "code_lines": 18,
+      "date": "2025-05-28",
+      "description": "This animation shader is inspired by the game Baba is you. In Baba is you, the game’s looks are very minimalistic and monochromatic, but the animation cycle has a very special look. Baba is you uses spritesheets to animate its components, and this shader is not strictly the same thing.\n\nHowever, with this shader you can achieve a similar effect, using just one sprite per element. The shader randomly changes the position of the 4 vertices every n seconds, animating the sprite continuously.\n\nTo use the shader just paste the code into a UI element’s shader.",
+      "file": "random-displacement-animation-easy-ui-animation.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "Random displacement animation (Easy UI animation)",
+      "shader_type": "canvas_item",
+      "slug": "random-displacement-animation-easy-ui-animation",
+      "tags": [
+        "2d",
+        "animation",
+        "Baba is you"
+      ],
+      "url": "https://godotshaders.com/shader/random-displacement-animation-easy-ui-animation/"
+    },
+    {
+      "author": "mo32167",
+      "author_url": "https://godotshaders.com/author/mo32167/",
+      "code_lines": 56,
+      "date": "2023-10-20",
+      "description": "Simple rain/snow shader learning project for godot 4.x\n\nAttach to e.g. a ColorRect and adjust to desired size",
+      "file": "simple-rain-snow-shader.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "Simple rain/snow shader",
+      "shader_type": "canvas_item",
+      "slug": "simple-rain-snow-shader",
+      "tags": [
+        "2d",
+        "rain",
+        "Snow"
+      ],
+      "url": "https://godotshaders.com/shader/simple-rain-snow-shader/"
+    },
+    {
+      "author": "axilirate",
+      "author_url": "https://godotshaders.com/author/axilirate/",
+      "code_lines": 59,
+      "date": "2023-03-02",
+      "description": "I made this following a unity tutorial.",
+      "file": "speed-lines-shader-for-godot-4.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "Speed Lines Shader for Godot 4",
+      "shader_type": "canvas_item",
+      "slug": "speed-lines-shader-for-godot-4",
+      "tags": [
+        "action lines"
+      ],
+      "url": "https://godotshaders.com/shader/speed-lines-shader-for-godot-4/"
+    },
+    {
+      "author": "Hayden",
+      "author_url": "https://godotshaders.com/author/hayden/",
+      "code_lines": 24,
+      "date": "2022-06-09",
+      "description": "Adjustable chromatic abberation.\n\nlevels determines the level of detail.\n\nspread determines the intensity of the effect.",
+      "file": "chromatic-abberation.gdshader",
+      "godot_versions": [],
+      "license": "cc0",
+      "name": "Chromatic Abberation",
+      "shader_type": "canvas_item",
+      "slug": "chromatic-abberation",
+      "tags": [],
+      "url": "https://godotshaders.com/shader/chromatic-abberation/"
+    },
+    {
+      "author": "ZareGameDev",
+      "author_url": "https://godotshaders.com/author/zaregamedev/",
+      "code_lines": 64,
+      "date": "2026-07-30",
+      "description": "I needed a way to create dissolved, old, or peeled text without using images or decals, which makes it lighter and easier to use on many objects.\n\nCreate a MeshInstance3D.\n\nSet the mesh type to TextMesh.\n\nSet Depth to 0.\n\nAdjust the shader parameters to get the look you want.\n\nThis shader uses procedural 3D noise, so no texture is required.",
+      "file": "text-peel-shader.gdshader",
+      "godot_versions": [
+        "4.5"
+      ],
+      "license": "cc0",
+      "name": "Text Peel Shader",
+      "shader_type": "spatial",
+      "slug": "text-peel-shader",
+      "tags": [
+        "3D noise dissolve",
+        "damaged text",
+        "dissolve shader",
+        "Godot 4 shader",
+        "peeled text",
+        "procedural dissolve",
+        "spatial shader",
+        "text dissolve",
+        "textmesh shader",
+        "world space dissolve"
+      ],
+      "url": "https://godotshaders.com/shader/text-peel-shader/"
+    },
+    {
+      "author": "TTien63",
+      "author_url": "https://godotshaders.com/author/ttien63/",
+      "code_lines": 258,
+      "date": "2026-07-03",
+      "description": "Made with Godot 4.6.3, and tested on 4.7 as well\n\nWell, it self explained. Frostbite is a Post Processing shader that creating the glass effect with Frosted Glass feature.\nI dont know what to say actually\n\nFreeze Progress control the frost intensity. So if you wanna control the shader, just edit here.\nAnd I’m sorry if I use Freeze Progress instead of Intensity I usually use in my other shader, because I just haven’t really tweaked this to match my use case 😛\n\nThis shader use Screenspace coordination, so it know where is your exact center of the screen, don’t need to complicate thing up, I already done it for you.\n\nEnjoy the nuke code\n\nI actually made this back in March, but I forgot to upload this cuz I was trying to do research on a Volumetric Cloud shader that use no Volumetric Fog, and it hella hard for me =w=;",
+      "file": "frostbite.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Frostbite",
+      "shader_type": "canvas_item",
+      "slug": "frostbite",
+      "tags": [
+        "Canva",
+        "chromatic aberration",
+        "frosted glass",
+        "Post processing",
+        "screen-space",
+        "vfx"
+      ],
+      "url": "https://godotshaders.com/shader/frostbite/"
+    },
+    {
+      "author": "inno",
+      "author_url": "https://godotshaders.com/author/inno/",
+      "code_lines": 187,
+      "date": "2026-04-16",
+      "description": "This shader is a 2D top-down height-map shadow shader.\n\nIt computes per-pixel shadowing by ray-marching backward along the sun direction to test whether light is blocked by higher surface values.\n\nUsing carrier_scale together with source_uv_scale, it allows shadows to extend beyond the original sprite bounds while keeping the source content centered.\n\nIt also uses smoothstep-based soft thresholding and optional 4-tap anti-aliasing to reduce hard edges and jagged artifacts.\n\nAdditionally, it can render shadow tint in transparent regions, which is especially useful for projecting building shadows onto surrounding ground.\n\nRef:\n\n1. https://editor.p5js.org/BarneyCodes/sketches/brfZ0NNpZ\n\n2. https://www.youtube.com/watch?v=bMTeCqNkId8",
+      "file": "2d-top-down-oblique-shadow.gdshader",
+      "godot_versions": [
+        "4.5",
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "2D top down oblique shadow",
+      "shader_type": "canvas_item",
+      "slug": "2d-top-down-oblique-shadow",
+      "tags": [
+        "oblique",
+        "shadow",
+        "topdown"
+      ],
+      "url": "https://godotshaders.com/shader/2d-top-down-oblique-shadow/"
+    },
+    {
+      "author": "pitch_blanc",
+      "author_url": "https://godotshaders.com/author/pitch_blanc/",
+      "code_lines": 24,
+      "date": "2026-04-10",
+      "description": "A progress bar that is a circle.",
+      "file": "simple-radial-progress-bar-2.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Simple Radial Progress Bar",
+      "shader_type": "canvas_item",
+      "slug": "simple-radial-progress-bar-2",
+      "tags": [
+        "bar",
+        "circle",
+        "progress",
+        "radial"
+      ],
+      "url": "https://godotshaders.com/shader/simple-radial-progress-bar-2/"
+    },
+    {
+      "author": "lil_sue",
+      "author_url": "https://godotshaders.com/author/lil_sue/",
+      "code_lines": 194,
+      "date": "2026-04-08",
+      "description": "EDIT: In my haste to upload, and tiredness. I just realised I uploaded “Master_Film_v5” and not “Master_Film_v7”. These are somewhat night and day versions of the same shader.\n\nThis is the second of my five / six plugins . . . . .\n\nI don’t know how technically accurate the dimensions are, and as I only have a laptop at hand, I don’t know how this scales across different screen sizes and ratios.\n\nThis brings a bit of cinematic/small-screen magic to our Godot projects. I hope it helps and inspires others.\nThings I might add if I get back around to it . . . . dynamic light leaks, dust, scratches, the usual jazz.\n\nAs well as the obvious film inspired ratios there’s also some neat creative framing oppertunities in the manual controls.",
+      "file": "creative-cinema-film-framing.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Creative Cinema / Film Framing",
+      "shader_type": "canvas_item",
+      "slug": "creative-cinema-film-framing",
+      "tags": [
+        "film",
+        "Framing",
+        "Projector",
+        "vignette"
+      ],
+      "url": "https://godotshaders.com/shader/creative-cinema-film-framing/"
+    },
+    {
+      "author": "Bandhu789",
+      "author_url": "https://godotshaders.com/author/bandhu789/",
+      "code_lines": 55,
+      "date": "2026-04-05",
+      "description": "This shader draws a grid of custom cell size, cell offset, line width, and line color. Designed for debugging chunking in my upcoming game Bitbound.\n\nNote: Line width is defined in screen space, while grid size is defined in world space.\n\nHope that this can be of use to someone <:\n\nPublished in the public domain — free for anyone to use without any restrictions.",
+      "file": "grid-shader-2.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Grid Shader",
+      "shader_type": "canvas_item",
+      "slug": "grid-shader-2",
+      "tags": [
+        "cell",
+        "Cellular",
+        "grid"
+      ],
+      "url": "https://godotshaders.com/shader/grid-shader-2/"
+    },
+    {
+      "author": "lil_sue",
+      "author_url": "https://godotshaders.com/author/lil_sue/",
+      "code_lines": 168,
+      "date": "2026-03-26",
+      "description": "Coming from a college education in mixed media, I figure I would make my own series of shaders to manipulate the camera into looking more cinematic.\n\nHue, Saturation, Brightness (Value) and Contrast are hopefully self-explanatory.\n\nColour Splash, allows you to desaturate all but a select colour or colours from the camera render.\n\nPrimary and secondary colours can be altered separately; this allows you to create cool things like complementary, duo-tone, and enhanced-analogous colour schemes in which the secondary colour can complement the primary colour without un-de-saturating the rest of the colour range.\n\nMonochrome desaturates all colour from the camera render except for any tint colour added.\n\nTint, depending on the colour chosen and its strength. This will add a warm or cool effect to the overall camera render.\n\nI’ve been inspired by colour grading/correction tools often found in video editing software like Davinci Resolve, Adobe After Effects, Sony Vegas Pro, etc.\n\nThis shader aims to allow you to dial in a set tone for your project all in one place. Using the values of Hue Saturation, and Brightness, you can dial in unique tone maps. This is somewhat superficial compared to the amount of manipulation you can achieve, but hopefully, more people find it helpful than a novelty.\n\nBe careful of the monochrome and tint factors; it can be somewhat counterintuitive at first. But the monochromatic makes it possible to implement a wide range of Black n white, cyanotype, and sepia types of film effects, whereas tint adds an overall singular hue to the scene colours. This can be odd when you want it to be more blue, but the colours currently present are making the scene seem more green or purple.\n\nI am going to admit I probably spent way too much time on this. I have probably made code that is inefficient and worse than just learning what Godot camera already has. \nBut this is my first shader upload of a planned five. The others are almost complete, but my energy to carry on has depleted in the last two weeks.\n\nAny and all feedback would be appreciated.",
+      "file": "colour-correction-grading.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Colour Correction / Grading",
+      "shader_type": "canvas_item",
+      "slug": "colour-correction-grading",
+      "tags": [
+        "camera effect",
+        "Color",
+        "colour",
+        "correction",
+        "film",
+        "grading",
+        "tone"
+      ],
+      "url": "https://godotshaders.com/shader/colour-correction-grading/"
+    },
+    {
+      "author": "Mincho1452",
+      "author_url": "https://godotshaders.com/author/mincho1452/",
+      "code_lines": 238,
+      "date": "2026-03-22",
+      "description": "",
+      "file": "screen.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Screen",
+      "shader_type": "canvas_item",
+      "slug": "screen",
+      "tags": [
+        "screen"
+      ],
+      "url": "https://godotshaders.com/shader/screen/"
+    },
+    {
+      "author": "stariluz",
+      "author_url": "https://godotshaders.com/author/stariluz/",
+      "code_lines": 124,
+      "date": "2026-03-16",
+      "description": "I needed to create a shader that does as follow:\n\n– Uses a background seamless texture, with a velocity and direction for an offset movement.\n\n– Mixes 4 seamless textures with alpha transparency and applies a random offset movement from an array of velocities and directions.\n\n– Every visible_duration seconds, the order in which the textures are displayed changes. A linear transition of transition_duration seconds will be displayed to show the new order of the textures.\n\n– You can control the overall movement velocity and the time scale of the patterns variables using the velocity_scale and time_scale uniforms.",
+      "file": "overlapping-seamless-textures-with-alpha-and-time-randomized-order.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Overlapping Seamless Textures with Alpha and Time-Randomized Order",
+      "shader_type": "canvas_item",
+      "slug": "overlapping-seamless-textures-with-alpha-and-time-randomized-order",
+      "tags": [
+        "linear transition",
+        "mix textures",
+        "overlap",
+        "overlapping textures",
+        "patterns",
+        "textures",
+        "transitions"
+      ],
+      "url": "https://godotshaders.com/shader/overlapping-seamless-textures-with-alpha-and-time-randomized-order/"
+    },
+    {
+      "author": "IceTeea",
+      "author_url": "https://godotshaders.com/author/iceteea/",
+      "code_lines": 57,
+      "date": "2026-03-11",
+      "description": "base shader used: https://godotshaders.com/shader/distortion/\n\nyes i dont know gdshader code so i chatgpt’d it\n\nbut its cool so im uploading it\n\nyou can now adjust the position and has inverts anything within the radius\n\nversion without invert but with adjustable position:\n\nhttps://gist.github.com/elim-minwoo/13a0d0f1b59b46c182cab0c62feee5a7",
+      "file": "za-warudo-shockwave-effect.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "ZA WARUDO shockwave effect",
+      "shader_type": "canvas_item",
+      "slug": "za-warudo-shockwave-effect",
+      "tags": [
+        "shockwave"
+      ],
+      "url": "https://godotshaders.com/shader/za-warudo-shockwave-effect/"
+    },
+    {
+      "author": "HyperJragon",
+      "author_url": "https://godotshaders.com/author/hyperjragon/",
+      "code_lines": 145,
+      "date": "2026-03-05",
+      "description": "A bit ago I made this black hole shader. It was originally adapted from this shader: https://godotshaders.com/shader/black-hole-shader/ however I have since changed a lot to add to physical realism and customisability.\n\nWarning: \nThis shader is horribly optimized, I recommend not using an unoptimized version in a game unless you are really lazy.\n\nTutorial:\nCreate a MeshInstance3D Node, Give it the shape of sphere I usually give it radius of 8 and height of 6 but thats up to you, then add this shader and customize it to your will.\n\nI recommend turning on glow in the world environment",
+      "file": "black-hole-extended.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "mit",
+      "name": "Black Hole Extended",
+      "shader_type": "spatial",
+      "slug": "black-hole-extended",
+      "tags": [
+        "Black hole",
+        "celestial",
+        "space"
+      ],
+      "url": "https://godotshaders.com/shader/black-hole-extended/"
+    },
+    {
+      "author": "Dan",
+      "author_url": "https://godotshaders.com/author/dan/",
+      "code_lines": 22,
+      "date": "2026-02-21",
+      "description": "Simple 2D black hole like effect 🌟",
+      "file": "2d-black-hole.gdshader",
+      "godot_versions": [
+        "4.4",
+        "4.5",
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "2D Black Hole",
+      "shader_type": "canvas_item",
+      "slug": "2d-black-hole",
+      "tags": [
+        "2d",
+        "blackhole",
+        "canvas"
+      ],
+      "url": "https://godotshaders.com/shader/2d-black-hole/"
+    },
+    {
+      "author": "shadecore_dev",
+      "author_url": "https://godotshaders.com/author/shadecore_dev/",
+      "code_lines": 102,
+      "date": "2026-02-10",
+      "description": "This is a follow-up shader for https://godotshaders.com/shader/pixelated-warped-fractal-noise/.\n\nThis shader takes the whole code of the pixelated warped fractal noise and applies it from top left corner to bottom right corner based on “progress” uniform variable.\n\nI’m using this shader for transition animation when switching scenes. I made it so the effect covers the entire screen at value progress=0.5, giving the ability to clear the old scene and load a new one in the background. After the new scene is loaded, the effect can be progressed from 0.5 -> 1.0 to fully dissapate.\n\nHere’s the code snippet for a “PersistentScene” autoload signleton that I use to play the animation. The transition effect is a ColorRect (with ShaderMaterial) attached as a child to persistent_foreground_scene.tscn, stretched to fullscreen and has a unique name %TransitionEffect.",
+      "file": "fractal-noise-scene-transition.gdshader",
+      "godot_versions": [
+        "4.5",
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Fractal noise scene transition",
+      "shader_type": "canvas_item",
+      "slug": "fractal-noise-scene-transition",
+      "tags": [
+        "2d",
+        "Abstract",
+        "animated",
+        "background",
+        "canvas",
+        "canvasitem",
+        "fbm",
+        "flow",
+        "fractal",
+        "godotshader",
+        "noise",
+        "Procedural",
+        "warped"
+      ],
+      "url": "https://godotshaders.com/shader/fractal-noise-scene-transition/"
+    },
+    {
+      "author": "MarshallNekiu",
+      "author_url": "https://godotshaders.com/author/marshallnekiu/",
+      "code_lines": 129,
+      "date": "2026-08-25",
+      "description": "",
+      "file": "grid2d.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Grid 2D",
+      "shader_type": "canvas_item",
+      "slug": "grid2d",
+      "tags": [
+        "grid"
+      ],
+      "url": "https://godotshaders.com/shader/grid2d/"
+    },
+    {
+      "author": "vandroid",
+      "author_url": "https://godotshaders.com/author/vandroid/",
+      "code_lines": 85,
+      "date": "2026-08-12",
+      "description": "This is a metaballs shader that uses ray marching to perfectly blend one ball into another.\n\nSet up :\n\n1. Create a mesh instance and assign box mesh and set its size large enough (100,100,100 etc).\n\n2. Attach this material to the mesh’s first material slot.\n\n3. Pass the uniforms (ball_positions, ball_colors, and active_balls) from a script.\n\nThis is the script im using for passing uniforms (attached to the mesh) :\n\n@tool \nextends MeshInstance3D \n \n# if you want to see changes in editor, keep this true \n@export var run_in_editor: bool = true \n@export var mat : ShaderMaterial \n@export var max_active : int = 20 \n \nfunc _ready() -> void: \n mat = get_active_material(0) as ShaderMaterial \n \nfunc _process(delta): \n if Engine.is_editor_hint() and not run_in_editor: \n return \n \n var positions = [] \n var colors = [] \n var active_count = 0 \n for child in get_children(): \n if child is Metaball: \n var radius = child.radius \n positions.append(Vector4(child.global_position.x,child.global_position.y,child.global_position.z, radius)) \n \n colors.append(child.color) \n active_count += 1 \n \n if child is MeshInstance3D and child.visible: \n child.visible = false \n \n if active_count >= max_active: \n break \n \n if active_count > 0: \n mat.set_shader_parameter(\"active_balls\", active_count) \n mat.set_shader_parameter(\"ball_positions\", positions) \n mat.set_shader_parameter(\"ball_colors\", colors) \n \n\nyou can pass the uniforms by adding nodes as children of the mesh or a group :\n\nextends Node3D \n \nclass_name Metaball \n \n@export var color : Color \n@export var radius : float",
+      "file": "sdf-metaballs.gdshader",
+      "godot_versions": [
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "SDF Metaballs",
+      "shader_type": "spatial",
+      "slug": "sdf-metaballs",
+      "tags": [
+        "Blob",
+        "metaball",
+        "metaballs",
+        "ray marching",
+        "raymarching",
+        "SDF"
+      ],
+      "url": "https://godotshaders.com/shader/sdf-metaballs/"
+    },
+    {
+      "author": "HexagonNico",
+      "author_url": "https://godotshaders.com/author/hexagonnico/",
+      "code_lines": 43,
+      "date": "2026-08-11",
+      "description": "A shader that turns a pattern into an animated background.\n\nAssign it to a ColorRect node and set Anchors Preset to Full Rect to create a background. The color of the ColorRect node will act as the background color, while to color assigned in the ShaderMaterial will be the color of the pattern.\n\nWorks well with Kenney’s pattern pack: kenney.nl/assets/pattern-pack-extra",
+      "file": "animated-pattern-background.gdshader",
+      "godot_versions": [
+        "4.0",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Animated pattern background",
+      "shader_type": "canvas_item",
+      "slug": "animated-pattern-background",
+      "tags": [
+        "animated",
+        "background",
+        "pattern"
+      ],
+      "url": "https://godotshaders.com/shader/animated-pattern-background/"
+    },
+    {
+      "author": "Dzsulioo",
+      "author_url": "https://godotshaders.com/author/dzsulioo/",
+      "code_lines": 56,
+      "date": "2026-08-06",
+      "description": "A modern, highly customizable skeleton screen loader for Godot 4.x UI panels. Features a smooth Gaussian glint sweep, adjustable colors, and a subtle background breathing pulse to make loading placeholders feel alive.\n\nHow to Use\n\nAdd a Panel node to your UI.\n\nIn Theme Overrides > Styles, create a StyleBoxFlat.\n\nUnder CanvasItem > Material, create a new ShaderMaterial and load this shader.\n\nSet the shader parameter corner_radius to 0.0, and use the StyleBoxFlat corner settings to control panel rounding.\n\nFeatures\n\nSmooth Gaussian shimmer curve (no harsh linear edges).\n\nIdle ambient breathing animation.\n\nFully tweakable sweep angle, speed, shimmer width, and colors.\n\nBuilt-in optional SDF rounding fallback.\n\nLicense: CC0 1.0 Universal (Public Domain) – Free for personal and commercial projects!",
+      "file": "clean-ui-skeleton-loader-shimmer.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Clean UI Skeleton Loader / Shimmer",
+      "shader_type": "canvas_item",
+      "slug": "clean-ui-skeleton-loader-shimmer",
+      "tags": [
+        "2d",
+        "animated",
+        "canvas_item",
+        "godot4",
+        "loader",
+        "loading",
+        "panel",
+        "Procedural",
+        "shimmer",
+        "skeleton",
+        "Stencil",
+        "ui"
+      ],
+      "url": "https://godotshaders.com/shader/clean-ui-skeleton-loader-shimmer/"
+    },
+    {
+      "author": "m o r b o",
+      "author_url": "https://godotshaders.com/author/m-o-r-b-o/",
+      "code_lines": 323,
+      "date": "2026-09-22",
+      "description": "Ported to Godot 4.7.1 and improved, based on this shader from mopifish\n\nThe parameters and the setup are the same as described in the original repo.\n\nA few more parameters were added to support sprite sheets.\n\nNEW PARAMS:\n\nActual example of how i’m using it in my game:",
+      "file": "improved-sprite-pixel-explosion-shader.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Improved sprite pixel explosion shader",
+      "shader_type": "particles",
+      "slug": "improved-sprite-pixel-explosion-shader",
+      "tags": [
+        "dissolve",
+        "explosion",
+        "particles",
+        "pixel"
+      ],
+      "url": "https://godotshaders.com/shader/improved-sprite-pixel-explosion-shader/"
+    },
+    {
+      "author": "breadpack",
+      "author_url": "https://godotshaders.com/author/breadpack/",
+      "code_lines": 89,
+      "date": "2026-09-19",
+      "description": "It’s a simple smoke or fog shader you can apply on ColorRect.\n\nBased on this shader: https://www.shadertoy.com/view/ldBSDd",
+      "file": "smoke-or-fog.gdshader",
+      "godot_versions": [
+        "4.5",
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Smoke or fog",
+      "shader_type": "canvas_item",
+      "slug": "smoke-or-fog",
+      "tags": [
+        "Fog",
+        "Smoke"
+      ],
+      "url": "https://godotshaders.com/shader/smoke-or-fog/"
+    },
+    {
+      "author": "Maaack",
+      "author_url": "https://godotshaders.com/author/maaack/",
+      "code_lines": 38,
+      "date": "2026-09-15",
+      "description": "Inspired by Nested Tinted Zooms by coprsinhere.\n\nUsage:\n\nThe shader takes several arguments:\n\ninput_texture is the texture that should receive the effect.\n\nzoom_center is the point from which the zoom effect should originate.\n\nlayers adjusts the number of times the texture should get mirrored.\n\nopacity adjusts the alpha/transparency of each layer relative to the last.\n\nzoom adjusts the magnification of each layer relative to the last.\n\nnormalization is a range between 0 and 1 of how much to use a normalized vector from the zoom origin.\n\nnormalized_scale is a range between -1 and 1 of how much to zoom the normalized vector relative to the screen size.",
+      "file": "simple-zoom-reflections-mirrors.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "Simple Zoom Reflections / Mirrors",
+      "shader_type": "canvas_item",
+      "slug": "simple-zoom-reflections-mirrors",
+      "tags": [
+        "mirror",
+        "reflection",
+        "zoom"
+      ],
+      "url": "https://godotshaders.com/shader/simple-zoom-reflections-mirrors/"
+    },
+    {
+      "author": "ja",
+      "author_url": "https://godotshaders.com/author/ja/",
+      "code_lines": 26,
+      "date": "2026-09-04",
+      "description": "",
+      "file": "burn-paper.gdshader",
+      "godot_versions": [
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "burn paper",
+      "shader_type": "spatial",
+      "slug": "burn-paper",
+      "tags": [],
+      "url": "https://godotshaders.com/shader/burn-paper/"
+    },
+    {
+      "author": "vino",
+      "author_url": "https://godotshaders.com/author/vino/",
+      "code_lines": 94,
+      "date": "2026-08-27",
+      "description": "Parody holographic foil shader with time-flowing rainbow effect, designed for meme trading cards. Supports albedo + mask.\n\n一款专为模因（meme）集换式卡牌设计的恶搞全息面膜染色器，具有随时间流动的彩虹效果，支持反光率（albedo）与遮罩（mask）贴图。",
+      "file": "memeholofoil-parody-holographic-card-.gdshader",
+      "godot_versions": [
+        "4.5",
+        "4.6"
+      ],
+      "license": "cc0",
+      "name": "MemeHoloFoil – Parody Holographic Card Foil（全息卡片）",
+      "shader_type": "spatial",
+      "slug": "memeholofoil-parody-holographic-card-",
+      "tags": [
+        "card",
+        "chrome",
+        "foil",
+        "godot4",
+        "holo",
+        "holographic",
+        "iridescent",
+        "laser",
+        "meme",
+        "parody",
+        "rainbow",
+        "sci-fi",
+        "Spatial",
+        "tradingcard"
+      ],
+      "url": "https://godotshaders.com/shader/memeholofoil-parody-holographic-card-/"
+    }
+  ],
+  "source": "https://godotshaders.com"
+}

@@ -1,4 +1,15 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-/addons/
+/build/
+/.trae
+/_backup
+
+# 生成的表 / 图集 / 音频 / 立绘 / 头像：体积大且含版权素材，见 NOTICE.md 与 DATA.md
+/subsystem/world_execute/data
+
+# Python 离线管线的临时产物
+__pycache__/
+*.pyc
+/addons/godot-vlc
+/subsystem/shader_capture/output

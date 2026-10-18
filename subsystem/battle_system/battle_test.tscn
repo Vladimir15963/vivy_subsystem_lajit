@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d0t5vpu53om5v"]
+
+[ext_resource type="PackedScene" uid="uid://bce8xhaf754py" path="res://subsystem/battle_system/ui/battle_ui_base.tscn" id="1_base"]
+[ext_resource type="Script" uid="uid://dvj0minwwvg2f" path="res://subsystem/battle_system/battle_test.gd" id="2_sub"]
+
+[node name="BattleTest" unique_id=1341757376 instance=ExtResource("1_base")]
+script = ExtResource("2_sub")
+party_ids = PackedStringArray("hero", "priest")
+enemy_ids = PackedStringArray("slime", "goblin")

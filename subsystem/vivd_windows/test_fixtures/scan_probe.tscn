@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://kys0s23nlndy"]
+
+[ext_resource type="PackedScene" uid="uid://4hlrdkm85nc8" path="res://subsystem/vivd_windows/types/default.tscn" id="1_base"]
+
+[node name="ScanProbe" unique_id=1657728424 instance=ExtResource("1_base")]
